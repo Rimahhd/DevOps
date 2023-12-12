@@ -27,4 +27,4 @@ jobs:
     - name: Deploy to Surge
       run: |
         npm install -g surge
-        surge --project ./path/to/your/build --token ${{ 88d4c19af2c71f0f3e20296668ecd3fe }}
+        surge --project ./path/to/your/build --token ${{ secrets.SURGE_TOKEN }}
