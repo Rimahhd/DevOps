@@ -1,0 +1,16 @@
+name: Deploy Website
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Deploying to surge
+    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install -g surge
+      - run: surge ./ ${{ https://guarded-quicksand.surge.sh/ }} --token ${{ 88d4c19af2c71f0f3e20296668ecd3fe }}
